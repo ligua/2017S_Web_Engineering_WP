@@ -1,0 +1,68 @@
+@media screen and (min-width: 1024px) {
+	.menu-img:hover figcaption{
+		line-height: 160px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.menu-img:hover figcaption{
+		line-height: 17.5vw;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.menu-img:hover figcaption{
+		line-height: 24vw;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.menu-img:hover figcaption{
+		line-height: 55vw;
+	}	
+}
+
+
+.menu-img figcaption{
+	transition: top 0.3s ease, background 1.5s ease;
+}
+
+.menu-img figcaption a{
+	transition: margin-left 0.3s ease, transform 2s ease;
+	display: inline-block;
+	position: absolute;
+	/*bottom: 0.4em; */
+	left: 7.7em; 
+	white-space: nowrap;
+	transform: rotate3d(0,1,0,0deg);
+	margin-left: -7em;
+}
+
+.menu-img:hover figcaption{
+	transition: top 0.5s ease, background 1.5s ease;
+	background: linear-gradient(rgba(255,100,100,1), rgba(0,0,0,0));
+	height: 100%;
+	padding: 0;
+	border-radius: 1vw;
+	bottom: 0;
+	top: 0;
+	text-align: center;
+}
+
+.menu-img:hover figcaption a{
+	transition: margin-left 0.3s ease, transform 1.6s ease;
+	position: initial;
+	margin-left: 0;
+	margin-right: 0;
+    transform: rotate3d(0,1,0,360deg);
+    white-space: nowrap;
+	border-bottom: 0;
+	bottom: 0;
+}
+
+@keyframes rotate {
+	from {bottom: 2.5em; left: 1em; transform: rotate3d(0,1,0,0deg);}
+	5% {bottom: 1em; left: 1em; transform: translate(0, 0) rotate3d(0,1,0,0deg);}
+    50% {bottom: 50%; left: 50%; transform: translate(-50%, 50%)  rotate3d(0,1,0,180deg);}
+    to {transform: translate(-50%, 50%) rotate3d(0,1,0,360deg);}
+}
