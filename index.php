@@ -204,13 +204,11 @@
 		<!-- Third -->
 		<article class="h_word" id="events">
 			<h2>Our Events</h2>
-			<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post();
-					the_content();
-				// End the loop.
-				endwhile;
-				?><br />
+			<p><?php
+				$post = get_post( 4 ); 
+				$content = $post->post_content;
+				echo $content;
+				?><br /></p>
 		</article>
 
 
