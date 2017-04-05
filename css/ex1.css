@@ -150,6 +150,12 @@ figure {
 	color: white;
 	background-color: black;
 	width: 100vw;
+	margin-top: 0;
+}
+
+.cover h2 {
+	color: white;
+	margin-bottom: 0;
 }
 
 .cover a {

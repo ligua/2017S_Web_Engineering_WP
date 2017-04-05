@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>LaPlace Restaurant</title>
+		<title><?php bloginfo( 'name' ); ?></title>
 		<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
@@ -13,6 +13,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ex2_move.js"></script>
+		<?php wp_head(); ?>
 	</head>
 
 	<body>
@@ -32,7 +33,8 @@
 		<header class="cover">
 			<img src="<?php bloginfo('template_directory'); ?>/images/header.jpg" alt="">
 			<div id="cover_title">
-				<h1> LaPlace - Zurich </h1>
+				<h2> <?php bloginfo( 'description' ); ?> </h2>
+				<h1> <?php bloginfo( 'name' ); ?> </h1>
 			</div>
 			<div id="cover_book">
 				<a href="#h_book">Book a Table</a>
