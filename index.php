@@ -45,22 +45,25 @@
 		<!-- First About-->
 		<!-- <div class="h_word" > -->
 		<article class="h_word" id="welcome">
-			<h2>Welcome</h2>
-			<p>LaPlace Restaurant was founded in May of 2015. The cuisine we serve is created with the utmost attention to details. Our emphasis is on providing fresh, locally sourced, exquisite food. As such our menus change on a regular basis, allowing us to offer you mouth watering, perfectly prepared dishes.<br/></p>
+			<?php $post = get_post( 15 ); ?>
+			<h2><?php echo $post->post_title; ?></h2>
+			<p><?php echo $post->post_content; ?><br/></p>
 		</article>
 
 		<!-- Second About -->
 		<article id="h_high_quality" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/small1.jpg);">
 			<div id="l_high_quality">
-			<h2>High Quality Cuisine</h2>
-			<p>Our cuisine is a melting pot of different cultures which have come together to form a unique blend of flavours and techniques.<br/></p>
+				<?php $post = get_post( 17 ); ?>
+				<h2><?php echo $post->post_title; ?></h2>
+				<p><?php echo $post->post_content; ?><br/></p>
 			</div>
 		</article>
 
 		<!-- Third About -->
 		<article class="h_word" id="only_best">
-			<h2>Only the Best Ingredients</h2>
-			<p>It's vital to our operation to make sure everybody is aware of the quality of the ingredients we use. As the choices we make in terms of which supplies we buy for our recipes is intrinsic to factors such as the healthiness of the food we make to the price you pay for it. That's why on our menus you find the origins of each of our ingredients.<br/></p>
+			<?php $post = get_post( 11 ); ?>
+			<h2><?php echo $post->post_title; ?></h2>
+			<p><?php echo $post->post_content; ?><br/></p>
 		</article>
 
 
@@ -203,12 +206,9 @@
 				
 		<!-- Third -->
 		<article class="h_word" id="events">
-			<h2>Our Events</h2>
-			<p><?php
-				$post = get_post( 4 ); 
-				$content = $post->post_content;
-				echo $content;
-				?><br /></p>
+			<?php $post = get_post( 4 ); ?>
+			<h2><?php echo $post->post_title; ?></h2>
+			<p><?php echo $post->post_content; ?><br /></p>
 		</article>
 
 
