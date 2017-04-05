@@ -31,7 +31,12 @@
 
 		<!-- Header -->
 		<header class="cover">
-			<img src="<?php bloginfo('template_directory'); ?>/images/header.jpg" alt="">
+			<?php $header = get_header_image();
+				if($header){?>
+					<img src="<?php header_image() ?>" alt="">
+				<?php }else{?>
+					<div style="background-image: url(<?php bloginfo('template_directory'); ?>/images/header.jpg); background-size: 100vw 40vw; background-repeat: no-repeat; width: 100vw; height: 40vw; position: initial;"></div>
+				<?php } ?>
 			<div id="cover_title">
 				<h2> <?php bloginfo( 'description' ); ?> </h2>
 				<h1> <?php bloginfo( 'name' ); ?> </h1>
@@ -216,7 +221,9 @@
 
 		<!-- event -->
 		<section>
+			<?php if(get_background_color()){ ?>
 			<div class="back-grey1">
+			<?php } ?>
 				<div id="l_events">
 				<header class="event-header"><b> Upcoming Events </b></header>
 				<article class="events">

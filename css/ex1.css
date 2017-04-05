@@ -990,7 +990,7 @@ figure {
 }
 
 .back-grey {
-	background-color: var(--back-grey);
+	/*background-color: var(--back-grey);*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -1002,7 +1002,7 @@ figure {
 }
 
 .back-grey1 {
-	background-color: var(--back-grey);
+	/*background-color: var(--back-grey);*/
  	padding-top: 30px;
  	padding-bottom: 30px;
  	margin: 0px;
