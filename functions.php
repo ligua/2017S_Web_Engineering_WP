@@ -1,4 +1,8 @@
 <?php
+
+ require_once('opening_hour.php'); 
+ require_once('contacts.php'); 
+
 add_theme_support( 'custom-header' );
 function change_custom_background_cb() {
     $background = get_background_image();

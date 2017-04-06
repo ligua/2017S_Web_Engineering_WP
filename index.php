@@ -52,7 +52,7 @@
 		<!-- First About-->
 		<!-- <div class="h_word" > -->
 		<article class="h_word" id="welcome">
-			<?php $post = get_post( 15 ); ?>
+			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/welcome/") ); ?>
 			<h2><?php echo $post->post_title; ?></h2>
 			<p><?php echo $post->post_content; ?><br/></p>
 		</article>
@@ -60,7 +60,7 @@
 		<!-- Second About -->
 		<article id="h_high_quality" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/small1.jpg);">
 			<div id="l_high_quality">
-				<?php $post = get_post( 17 ); ?>
+				<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/high-quality-cuisine/") ); ?>
 				<h2><?php echo $post->post_title; ?></h2>
 				<p><?php echo $post->post_content; ?><br/></p>
 			</div>
@@ -68,7 +68,7 @@
 
 		<!-- Third About -->
 		<article class="h_word" id="only_best">
-			<?php $post = get_post( 11 ); ?>
+			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/only-the-best-ingredients/") ); ?>
 			<h2><?php echo $post->post_title; ?></h2>
 			<p><?php echo $post->post_content; ?><br/></p>
 		</article>
@@ -213,7 +213,7 @@
 				
 		<!-- Third -->
 		<article class="h_word" id="events">
-			<?php $post = get_post( 4 ); ?>
+			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/our-events/") ); ?>
 			<h2><?php echo $post->post_title; ?></h2>
 			<p><?php echo $post->post_content; ?><br /></p>
 		</article>
@@ -381,20 +381,21 @@
 					<div id="h_l_opening" >
 						<h2> Opening Hour </h2>
 						<p> </p> </br>
-						<p> <b> MONDAY : </b>Closed </p> </br>
-						<p> <b>TUE-FRI : </b>8am - 12am</p> </br>
-						<p> <b>SAT-SUN : </b>7am - 1am</p> </br>
-						<p> <b>HOLYDAYS : </b>12pm-12am</p> </br>
+
+						<p> <b> MONDAY : </b>  <?php echo get_option("MONDAY") ?> </p> </br>
+						<p> <b>TUE-FRI : </b><?php echo get_option("TUEFRI") ?></p> </br>
+						<p> <b>SAT-SUN : </b><?php echo get_option("SATSUN") ?></p> </br>
+						<p> <b>HOLYDAYS : </b><?php echo get_option("HOLYDAYS") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>
 					<div id="h_l_contact" >
 						<h2>  Contacts </h2>
 						<p> </p> </br>
-						<p> <b>ADDRESS : </b>4578 Zurich</p> </br>
-						<p> Badenerstrasse 500</p> </br>
-						<p> <b>PHONE : </b>(606) 144-0100 </p> </br>
-						<p> <b>EMAIL : </b>admin@laplace.com</p> </br>
+						<p> <b>ADDRESS : </b><?php echo get_option("ADDRESS1") ?></p> </br>
+						<p> <?php echo get_option("ADDRESS2") ?></p> </br>
+						<p> <b>PHONE : </b><?php echo get_option("PHONE") ?></p> </br>
+						<p> <b>EMAIL : </b><?php echo get_option("EMAIL") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>	

@@ -45,12 +45,12 @@ function changemenu(x)
 
     for (i=1;i<=6;i++)
     {
+
         var img = document.getElementById("menu-img"+i);
-	    img.setAttribute("src","http://localhost/wordpress/wp-content/themes/web_engineering/images/menu/"+menus[x-1]+i+".jpg");
+	    img.setAttribute("src","http://localhost/wordpress/wp-content/themes/2017S_Web_Engineering_WP/images/menu/"+menus[x-1]+i+".jpg");
 	    var img2 = document.getElementById("modal_img"+i);
-	    img2.setAttribute("src","http://localhost/wordpress/wp-content/themes/web_engineering/images/menu/"+menus[x-1]+i+".jpg");
+	    img2.setAttribute("src","http://localhost/wordpress/wp-content/themes/2017S_Web_Engineering_WP/images/menu/"+menus[x-1]+i+".jpg");
     }
-    
     for (i=1;i<=6;i++)
     {
         var tmp = document.getElementById("modal_content"+i);
