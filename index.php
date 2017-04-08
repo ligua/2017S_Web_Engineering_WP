@@ -39,7 +39,7 @@
 				<?php } ?>
 			<div id="cover_title">
 				<h2> <?php bloginfo( 'description' ); ?> </h2>
-				<h1> <?php bloginfo( 'name' ); ?> </h1>
+				<h1> <?php echo get_theme_mod('url_field_id'); ?> </h1>
 			</div>
 			<div id="cover_book">
 				<a href="#h_book">Book a Table</a>
@@ -52,7 +52,7 @@
 		<!-- First About-->
 		<!-- <div class="h_word" > -->
 		<article class="h_word" id="welcome">
-			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/welcome/") ); ?>
+			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index/welcome/") ); ?>
 			<h2><?php echo $post->post_title; ?></h2>
 			<p><?php echo $post->post_content; ?><br/></p>
 		</article>
@@ -60,7 +60,7 @@
 		<!-- Second About -->
 		<article id="h_high_quality" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/small1.jpg);">
 			<div id="l_high_quality">
-				<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/high-quality-cuisine/") ); ?>
+				<?php $post = get_post( url_to_postid("http://localhost/wordpress/index/high-quality-cuisine/") ); ?>
 				<h2><?php echo $post->post_title; ?></h2>
 				<p><?php echo $post->post_content; ?><br/></p>
 			</div>
@@ -68,7 +68,7 @@
 
 		<!-- Third About -->
 		<article class="h_word" id="only_best">
-			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/only-the-best-ingredients/") ); ?>
+			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index/only-the-best-ingredients/") ); ?>
 			<h2><?php echo $post->post_title; ?></h2>
 			<p><?php echo $post->post_content; ?><br/></p>
 		</article>
@@ -213,7 +213,7 @@
 				
 		<!-- Third -->
 		<article class="h_word" id="events">
-			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index.php/our-events/") ); ?>
+			<?php $post = get_post( url_to_postid("http://localhost/wordpress/index/our-events/") ); ?>
 			<h2><?php echo $post->post_title; ?></h2>
 			<p><?php echo $post->post_content; ?><br /></p>
 		</article>
