@@ -92,8 +92,8 @@
         <p> <label>Dish Name<br> <input type="text" name="pname" size="50"
         value="<?php echo $pname; ?>"> </label>
         </p>
-        <p> <label>Description<br> <textarea name="office" rows="3" cols="50"
-        value="<?php echo $office; ?>"> </textarea></label>
+        <p> <label>Description<br> <input type="text" name="office" rows="3" cols="50"
+        value="<?php echo $office; ?>"> </label>
         </p>
         <p> <label>Image<br> <input type="text" name="email" size="50"
         value ="<?php echo $email; ?>"> </label>
