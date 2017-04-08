@@ -1,7 +1,6 @@
 <?php
 
- require_once('opening_hour.php'); 
- require_once('contacts.php'); 
+
 
 add_theme_support( 'custom-header' );
 function change_custom_background_cb() {
@@ -71,7 +70,7 @@ function prefix_customizer_register( $wp_customize ) {
     'default' => '',
     'type' => 'theme_mod',
     'capability' => 'edit_theme_options',
-    'transport' => 'postMessage',
+    'transport' => '',
     'sanitize_callback' => 'esc_url',
 ) );
 $wp_customize->add_control( 'url_field_id', array(
@@ -95,3 +94,6 @@ function mytheme_customizer_live_preview()
     );
 }
 add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
+
+ require_once('opening_hour.php'); 
+ require_once('contacts.php'); 

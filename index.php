@@ -382,20 +382,20 @@
 						<h2> Opening Hour </h2>
 						<p> </p> </br>
 
-						<p> <b> MONDAY : </b>  <?php echo get_option("MONDAY") ?> </p> </br>
-						<p> <b>TUE-FRI : </b><?php echo get_option("TUEFRI") ?></p> </br>
-						<p> <b>SAT-SUN : </b><?php echo get_option("SATSUN") ?></p> </br>
-						<p> <b>HOLYDAYS : </b><?php echo get_option("HOLYDAYS") ?></p> </br>
+						<p> <b> MONDAY : </b>  <?php echo get_theme_mod("MONDAY") ?> </p> </br>
+						<p> <b>TUE-FRI : </b><?php echo get_theme_mod("TUEFRI") ?></p> </br>
+						<p> <b>SAT-SUN : </b><?php echo get_theme_mod("SATSUN") ?></p> </br>
+						<p> <b>HOLIDAYS : </b><?php echo get_theme_mod("HOLIDAYS") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>
 					<div id="h_l_contact" >
 						<h2>  Contacts </h2>
 						<p> </p> </br>
-						<p> <b>ADDRESS : </b><?php echo get_option("ADDRESS1") ?></p> </br>
-						<p> <?php echo get_option("ADDRESS2") ?></p> </br>
-						<p> <b>PHONE : </b><?php echo get_option("PHONE") ?></p> </br>
-						<p> <b>EMAIL : </b><?php echo get_option("EMAIL") ?></p> </br>
+						<p> <b>ADDRESS : </b><?php echo get_theme_mod("City") ?></p> </br>
+						<p> <?php echo get_theme_mod("Street") ?></p> </br>
+						<p> <b>PHONE : </b><?php echo get_theme_mod("PHONE") ?></p> </br>
+						<p> <b>EMAIL : </b><?php echo get_theme_mod("EMAIL") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>	
