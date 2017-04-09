@@ -58,9 +58,11 @@
             return $post->ID;
         }
         $dish_post_meta['dish_pname'] = $_POST['pname'];
-        $dish_post_meta['dish_office'] = $_POST['office'];
-        $dish_post_meta['dish_email'] = $_POST['email'];
+        $dish_post_meta['dish_description'] = $_POST['description'];
+        $dish_post_meta['dish_image'] = $_POST['image'];
         // add values as custom fields
+        //update_post_meta($post->ID, "title", $_POST['pname']);
+        //update_option("title", $_POST['pname']);
         foreach( $dish_post_meta as $key => $value ) {
             if( get_post_meta( $post->ID, $key, FALSE ) ) {
                 // if the custom field already has a value
@@ -84,19 +86,19 @@
         global $post;
         $custom = get_post_custom($post->ID);
         $pname = $custom['dish_pname'][0];
-        $office = $custom['dish_office'][0];
-        $email = $custom['dish_email'][0];
+        $description = $custom['dish_description'][0];
+        $image = $custom['dish_image'][0];
         ?>
 
         <div class="dish">
         <p> <label>Dish Name<br> <input type="text" name="pname" size="50"
         value="<?php echo $pname; ?>"> </label>
         </p>
-        <p> <label>Description<br> <input type="text" name="office" rows="3" cols="50"
-        value="<?php echo $office; ?>"> </label>
+        <p> <label>Description<br> <input type="text" name="description" rows="3" cols="50"
+        value="<?php echo $description; ?>"> </label>
         </p>
-        <p> <label>Image<br> <input type="text" name="email" size="50"
-        value ="<?php echo $email; ?>"> </label>
+        <p> <label>Image<br> <input type="text" name="image" size="50"
+        value ="<?php echo $image; ?>"> </label>
         </p>
         </div>
 

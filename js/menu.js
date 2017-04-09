@@ -1,3 +1,27 @@
+document.write("
+					<?php
+						$teamPosts = new WP_Query('post_type=dish&Categorization=a');
+						if ($teamPosts->have_posts()) :
+						while ($teamPosts->have_posts()) :
+						$teamPosts->the_post(); ?>
+						
+						<div><?php the_title(); echo '<br/>';
+						$custom_fields = get_post_custom();
+						foreach ( $custom_fields as $field_key => $field_values ) {
+						if(!isset($field_values[0])) continue;
+						if(in_array($field_key,array("_edit_lock","_edit_last"))) continue;
+						echo $field_values[0]; echo '<br/>'; } ?>
+						</div>
+						
+						<?php endwhile;
+						endif;
+
+")
+
+
+
+
+					?>
 var t=0;
 function changemenu(x)
 {

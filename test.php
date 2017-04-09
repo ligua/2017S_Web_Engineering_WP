@@ -3,7 +3,6 @@
 <html>
 
 	<head>
-
 		<title><?php bloginfo( 'name' ); ?></title>
 		<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
@@ -12,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/ex2popup.css" />
 		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/ex2hover.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.php"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ex2_move.js"></script>
 		<?php wp_head(); ?>
 	</head>
@@ -155,7 +154,35 @@
 						<a href="#Dessert" id="menu-choise4" >Dessert</a>
 					</section>
 				</article>
-				
+				<div >
+					<?php
+						$teamPosts = new WP_Query('post_type=dish&Categorization=a');
+						if ($teamPosts->have_posts()) :
+						while ($teamPosts->have_posts()) :
+						$teamPosts->the_post(); ?>
+						
+						<div><?php the_title(); echo '<br/>';
+						$custom_fields = get_post_custom();
+						foreach ( $custom_fields as $field_key => $field_values ) {
+						if(!isset($field_values[0])) continue;
+						if(in_array($field_key,array("_edit_lock","_edit_last"))) continue;
+						echo $field_values[0]; echo '<br/>'; } ?>
+						</div>
+						
+						<?php endwhile;
+						endif;
+
+
+
+
+
+
+					?>
+
+
+
+
+				</div>
 
 
 
