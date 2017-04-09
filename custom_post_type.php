@@ -1,5 +1,11 @@
 <?php
+    function load_admin_things() {
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script('thickbox');
+        wp_enqueue_style('thickbox');
+    }
 
+    add_action( 'admin_enqueue_scripts', 'load_admin_things' );
     
     function create_dish_post_type() {
 
@@ -58,9 +64,11 @@
             return $post->ID;
         }
         $dish_post_meta['dish_pname'] = $_POST['pname'];
-        $dish_post_meta['dish_office'] = $_POST['office'];
-        $dish_post_meta['dish_email'] = $_POST['email'];
+        $dish_post_meta['dish_description'] = $_POST['description'];
+        $dish_post_meta['dish_image'] = $_POST['upload_image_id'];
         // add values as custom fields
+        //update_post_meta($post->ID, "title", $_POST['pname']);
+        //update_option("title", $_POST['pname']);
         foreach( $dish_post_meta as $key => $value ) {
             if( get_post_meta( $post->ID, $key, FALSE ) ) {
                 // if the custom field already has a value
@@ -74,6 +82,13 @@
                 delete_post_meta( $post->ID, $key );
             }
         }
+        update_post_meta( $post->ID, '_image_id', $_POST['upload_image_id'] );
+
+
+
+
+
+
     }
     add_action( 'save_post', 'dish_post_save_meta', 1, 2 );
 
@@ -84,21 +99,85 @@
         global $post;
         $custom = get_post_custom($post->ID);
         $pname = $custom['dish_pname'][0];
-        $office = $custom['dish_office'][0];
-        $email = $custom['dish_email'][0];
+        $description = $custom['dish_description'][0];
+        $image = $custom['dish_image'][0];
+        
+
+        $image_src = '';
+        $image_id = get_post_meta( $post->ID, '_image_id', true );
+        $image_src = wp_get_attachment_url( $image_id );
+ 
         ?>
+        <img id="book_image" src="<?php echo $image_src ?>" style="max-width:100%;" />
+        <input type="hidden" name="upload_image_id" id="upload_image_id" value="<?php echo $image_id; ?>" />
+        <p>
+            <a title="<?php esc_attr_e( 'Set book image' ) ?>" href="#" id="set-book-image"><?php _e( 'Set book image' ) ?></a>
+            <a title="<?php esc_attr_e( 'Remove book image' ) ?>" href="#" id="remove-book-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove book image' ) ?></a>
+        </p>
 
         <div class="dish">
         <p> <label>Dish Name<br> <input type="text" name="pname" size="50"
         value="<?php echo $pname; ?>"> </label>
         </p>
-        <p> <label>Description<br> <input type="text" name="office" rows="3" cols="50"
-        value="<?php echo $office; ?>"> </label>
+        <p> <label>Description<br> <input type="text" name="description" rows="3" cols="50"
+        value="<?php echo $description; ?>"> </label>
         </p>
-        <p> <label>Image<br> <input type="text" name="email" size="50"
-        value ="<?php echo $email; ?>"> </label>
-        </p>
+
         </div>
+
+        <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            
+            // save the send_to_editor handler function
+            window.send_to_editor_default = window.send_to_editor;
+    
+            $('#set-book-image').click(function(){
+                
+                // replace the default send_to_editor handler function with our own
+                window.send_to_editor = window.attach_image;
+                tb_show('', 'media-upload.php?post_id=<?php echo $post->ID ?>&amp;type=image&amp;TB_iframe=true');
+                
+                return false;
+            });
+            
+            $('#remove-book-image').click(function() {
+                
+                $('#upload_image_id').val('');
+                $('img').attr('src', '');
+                $(this).hide();
+                
+                return false;
+            });
+            
+            // handler function which is invoked after the user selects an image from the gallery popup.
+            // this function displays the image and sets the id so it can be persisted to the post meta
+            window.attach_image = function(html) {
+                
+                // turn the returned image html into a hidden image element so we can easily pull the relevant attributes we need
+                $('body').append('<div id="temp_image">' + html + '</div>');
+                    
+                var img = $('#temp_image').find('img');
+                
+                imgurl   = img.attr('src');
+                imgclass = img.attr('class');
+                imgid    = parseInt(imgclass.replace(/\D/g, ''), 10);
+    
+                $('#upload_image_id').val(imgid);
+                $('#remove-book-image').show();
+    
+                $('img#book_image').attr('src', imgurl);
+                try{tb_remove();}catch(e){};
+                $('#temp_image').remove();
+                
+                // restore the send_to_editor handler function
+                window.send_to_editor = window.send_to_editor_default;
+                
+            }
+    
+        });
+        </script>
+
+
 
         <?php
     }
