@@ -29,7 +29,14 @@ function get_content_list($field_name)
                 $teamPosts->the_post(); 
                 $custom_fields = get_post_custom();
                 echo "\"";
-                echo $custom_fields[$field_name][0];
+                if ($field_name=="dish_image")
+                {
+                    echo wp_get_attachment_url($custom_fields[$field_name][0]);
+                }
+                else
+                {
+                    echo $custom_fields[$field_name][0];
+                }
                 echo $email;
                 echo "\",";
             endwhile;
@@ -47,7 +54,7 @@ function get_content_list($field_name)
 
 
     
-    var menus = ["pic0", "pasta", "meat","dessert"];
+    var menus = <?php get_content_list("dish_image");  ?>;
     var content = <?php get_content_list("dish_description");  ?>;
     var title = <?php get_content_list("dish_pname");  ?>;
     
@@ -58,9 +65,9 @@ function get_content_list($field_name)
     {
 
         var img = document.getElementById("menu-img"+i);
-	    img.setAttribute("src","http://localhost/wordpress/wp-content/themes/2017S_Web_Engineering_WP/images/menu/"+menus[x-1]+i+".jpg");
+	    img.setAttribute("src",menus[x-1][i-1]);
 	    var img2 = document.getElementById("modal_img"+i);
-	    img2.setAttribute("src","http://localhost/wordpress/wp-content/themes/2017S_Web_Engineering_WP/images/menu/"+menus[x-1]+i+".jpg");
+	    img2.setAttribute("src",menus[x-1][i-1]);
     }
     for (i=1;i<=6;i++)
     {
