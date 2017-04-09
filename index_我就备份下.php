@@ -32,10 +32,15 @@
 
 		<!-- Header -->
 		<header class="cover">
-			<img id="header_image" src="<?php header_image() ?>" alt="">
+			<?php $header = get_header_image();
+				if($header){?>
+					<img src="<?php header_image() ?>" alt="">
+				<?php }else{?>
+					<div style="background-image: url(<?php bloginfo('template_directory'); ?>/images/header.jpg); background-size: 100vw 40vw; background-repeat: no-repeat; width: 100vw; height: 40vw; position: initial;"></div>
+				<?php } ?>
 			<div id="cover_title">
 				<h2> <?php bloginfo( 'description' ); ?> </h2>
-				<h1 id="cover_titleh1"> <?php bloginfo( 'name' ); ?> </h1>
+				<h1 id="cover_title1"> <?php echo get_theme_mod('url_field_id'); ?> </h1>
 			</div>
 			<div id="cover_book">
 				<a href="#h_book">Book a Table</a>
@@ -251,7 +256,7 @@
 
 	            endwhile;
 	        endif;
-	        
+	        echo count($eventlist_upcoming);
 	        function cmp($a,$b)
 	        {
 	        	if ($a == $b) {
@@ -270,6 +275,18 @@
 	        usort($eventlist_upcoming,"cmp2");
 	        
 	        
+	        for ($i = 0 ; $i< count($eventlist_upcoming);$i++)
+	        {
+	        	$d = new DateTime($eventlist_upcoming[$i]["event_stime"][0]); 
+	        	echo $d->format("Y-m-d h:i:sa");
+	        }
+	        echo count($eventlist_past);
+	        for ($i = 0 ; $i< count($eventlist_past);$i++)
+	        {
+	        	$d = new DateTime($eventlist_past[$i]["event_stime"][0]); 
+	        	echo $d->format("Y-m-d h:i:sa");
+	        }
+	        
 		?>
 		<h1>
 
@@ -281,47 +298,75 @@
 				<div id="l_events">
 				<header class="event-header"><b> Upcoming Events </b></header>
 				<article class="events">
-					<?php for ($i=0;$i<((count($eventlist_upcoming)>3)?3:count($eventlist_upcoming));$i++)    {?>
-
-						<section class="event">
-							<figure>
-								<img src=<?php  echo "\"".wp_get_attachment_url($eventlist_upcoming[$i]["event_image"][0])."\"" ?> alt="" />
-							</figure>
-							<figcaption>
-								<?php $sd = new DateTime($eventlist_upcoming[$i]["event_stime"][0]); ?>
-								<?php $ed = new DateTime($eventlist_upcoming[$i]["event_etime"][0]); ?>
-								<h3><?php  echo $eventlist_upcoming[$i]["event_pname"][0] ?> </h3>
-								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
-							</figcaption>
-							<article class="event-content">
-								<p><?php  echo $eventlist_upcoming[$i]["event_description"][0] ?></a> </p>
-							</article>
-						</section>
-					<?php }
-					?>
-
-
-
-
-
+					<section class="event">
+						<figure>
+							<img src="<?php bloginfo('template_directory'); ?>/images/cooking.jpg" alt="" />
+						</figure>
+						<figcaption>
+							<h3>Learning to Cook</h3>
+							<h2>12/03/2017</br>10:30 a.m.</h2>
+						</figcaption>
+						<article class="event-content">
+						<p>Get the basic skills every home cook needs to be successful and happy in the kitchen. Ditch recipes by learning basic cooking formulas. Come and learn how to <a href=""> [Read More]</a></p>
+						</article>		
+					</section>
+					<section class="event">
+						<figure>
+							<img src="<?php bloginfo('template_directory'); ?>/images/2.jpg" alt="" />
+						</figure>
+						<figcaption>
+							<h3>Pasta Day</h3>
+							<h2>11/03/2017</br>18:00 - 23:00</h2>
+						</figcaption>
+						<article class="event-content">
+							<p>The fresh pastas offered at LaPlace are made right in our restaurant. And if you've only ever had boxed pastas, you are truly missing out! Once evert two months we celebrate Pasta with an event <a href=""> [Read More]</a></p>
+						</article>
+					</section>
+					<section class="event">
+						<figure>
+							<img src="<?php bloginfo('template_directory'); ?>/images/3.png" alt="" />
+						</figure>
+						<figcaption>
+							<h3>Happy Hour</h3>
+							<h2>03/03/2017</br>18:00 - 23:00</h2>
+						</figcaption>
+						<article class="event-content">
+							<p>It's Friday!!! Come and enjoy the start of the weekend with us. Our Happy Hours offer the best combination of nice drinks and food. To reserve a sit please register to the event <a href=""> [Read More]</a> </p>
+						</article>
+					</section>
 				</article>
 				</div>
 				<article id="l_past_events">
 					<header class="event-header"> <b> Past Events </b> </header>
 					<section class="events">
-					<?php for ($i=0;$i<((count($eventlist_past)>4)?4:count($eventlist_past));$i++)    {?>
 						<figure  class="past-event">
-							<img src=<?php  echo "\"".wp_get_attachment_url($eventlist_past[$i]["event_image"][0])."\"" ?> alt="" />
+							<img src="<?php bloginfo('template_directory'); ?>/images/4.jpg" alt="" />
 							<a href="">
-								<?php $sd = new DateTime($eventlist_past[$i]["event_stime"][0]); ?>
-								<?php $ed = new DateTime($eventlist_past[$i]["event_etime"][0]); ?>
-								<h3><?php  echo $eventlist_past[$i]["event_pname"][0] ?> </h3>
-								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
+								<h3>10th Anniversary</h3>
+								<h2>01/12/2016 18:00 - 23:00</h2>
 							</a>
 						</figure>
-					<?php } ?>
-						
-							
+						<figure class="past-event">
+							<img src="<?php bloginfo('template_directory'); ?>/images/2.jpg" alt="" />
+							<a href="">
+								<h3>Pasta Day</h3>
+								<h2>20/11/2016 18:00 - 23:00</h2>
+							</a>
+						</figure>
+						<figure  class="past-event">
+							<img src="<?php bloginfo('template_directory'); ?>/images/3.png" alt="" />
+							<a href="">
+								<h3>Happy Hour</h3>
+								<h2>11/11/2016 18:00 - 23:00</h2>
+							</a>
+						</figure>
+						<figure  class="past-event">
+							<img src="<?php bloginfo('template_directory'); ?>/images/cooking.jpg" alt="" />
+							<a href="">
+								<h3>Salsa</h3>
+								<h2>01/11/2016 18:00 - 23:00</h2>
+							</a>
+						</figure>		
 					</section>
 					</br> </br>
 					<section>
@@ -408,20 +453,20 @@
 						<h2> Opening Hour </h2>
 						<p> </p> </br>
 
-						<p id="monday"> <b>MONDAY : </b><?php echo get_theme_mod("MONDAY") ?></p> </br>
-						<p id="tuefri"> <b>TUE-FRI : </b><?php echo get_theme_mod("TUEFRI") ?></p> </br>
-						<p id="satsun"> <b>SAT-SUN : </b><?php echo get_theme_mod("SATSUN") ?></p> </br>
-						<p id="holidays"> <b>HOLIDAYS : </b><?php echo get_theme_mod("HOLIDAYS") ?></p> </br>
+						<p> <b> MONDAY : </b>  <?php echo get_theme_mod("MONDAY") ?> </p> </br>
+						<p> <b>TUE-FRI : </b><?php echo get_theme_mod("TUEFRI") ?></p> </br>
+						<p> <b>SAT-SUN : </b><?php echo get_theme_mod("SATSUN") ?></p> </br>
+						<p> <b>HOLIDAYS : </b><?php echo get_theme_mod("HOLIDAYS") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>
 					<div id="h_l_contact" >
 						<h2>  Contacts </h2>
 						<p> </p> </br>
-						<p id="city"> <b>ADDRESS : </b><?php echo get_theme_mod("City") ?></p> </br>
-						<p id="street"> <?php echo get_theme_mod("Street") ?></p> </br>
-						<p id="phone"> <b>PHONE : </b><?php echo get_theme_mod("PHONE") ?></p> </br>
-						<p id="email"> <b>EMAIL : </b><?php echo get_theme_mod("EMAIL") ?></p> </br>
+						<p> <b>ADDRESS : </b><?php echo get_theme_mod("City") ?></p> </br>
+						<p> <?php echo get_theme_mod("Street") ?></p> </br>
+						<p> <b>PHONE : </b><?php echo get_theme_mod("PHONE") ?></p> </br>
+						<p> <b>EMAIL : </b><?php echo get_theme_mod("EMAIL") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>	
