@@ -256,7 +256,7 @@
 
 	            endwhile;
 	        endif;
-	        echo count($eventlist_upcoming);
+	        
 	        function cmp($a,$b)
 	        {
 	        	if ($a == $b) {
@@ -274,18 +274,6 @@
 	        }
 	        usort($eventlist_upcoming,"cmp2");
 	        
-	        
-	        for ($i = 0 ; $i< count($eventlist_upcoming);$i++)
-	        {
-	        	$d = new DateTime($eventlist_upcoming[$i]["event_stime"][0]); 
-	        	echo $d->format("Y-m-d h:i:sa");
-	        }
-	        echo count($eventlist_past);
-	        for ($i = 0 ; $i< count($eventlist_past);$i++)
-	        {
-	        	$d = new DateTime($eventlist_past[$i]["event_stime"][0]); 
-	        	echo $d->format("Y-m-d h:i:sa");
-	        }
 	        
 		?>
 		<h1>
