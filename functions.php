@@ -1,6 +1,8 @@
 <?php
 
-require_once('custom_post_type.php'); 
+require_once('custom_post_type_dish.php'); 
+
+require_once('custom_post_type_event.php'); 
 //require_once('custom-post-type-image-upload.php'); 
 function my_function_admin_bar(){ return false; }
 add_filter( 'show_admin_bar' , 'my_function_admin_bar');
