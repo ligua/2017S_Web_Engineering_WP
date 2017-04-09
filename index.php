@@ -39,7 +39,7 @@
 				<?php } ?>
 			<div id="cover_title">
 				<h2> <?php bloginfo( 'description' ); ?> </h2>
-				<h1 id="cover_title1"> <?php echo get_theme_mod('url_field_id'); ?> </h1>
+				<h1 id="cover_title1"> <?php bloginfo( 'name' ); ?> </h1>
 			</div>
 			<div id="cover_book">
 				<a href="#h_book">Book a Table</a>
