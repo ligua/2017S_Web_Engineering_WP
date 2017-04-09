@@ -71,7 +71,7 @@ function prefix_customizer_register( $wp_customize ) {
     'default' => '',
     'type' => 'theme_mod',
     'capability' => 'edit_theme_options',
-    'transport' => '',
+    'transport' => 'postMessage',
     'sanitize_callback' => 'esc_url',
 ) );
 $wp_customize->add_control( 'url_field_id', array(
@@ -84,18 +84,27 @@ $wp_customize->add_control( 'url_field_id', array(
 }
 add_action( 'customize_register', 'prefix_customizer_register' );
 
-function mytheme_customizer_live_preview()
-{
+function mytheme_customizer_live_preview(){
+    // print get_template_directory_uri() . '/js/theme-customizer.js';
     wp_enqueue_script( 
           'mytheme-themecustomizer',            //Give the script an ID
-          get_template_directory_uri().'/js/theme-customizer.js',//Point to file
+          get_template_directory_uri() . '/js/theme-customizer.js',//Point to file
           array( 'jquery','customize-preview' ),    //Define dependencies
           '',                       //Define a version (optional) 
           true                      //Put script in footer?
     );
 }
-add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
 
-require_once('opening_hour.php'); 
-require_once('contacts.php'); 
-
+add_action( 'customize_preview_init', wp_enqueue_script( 
+          'mytheme-themecustomizer',            //Give the script an ID
+          get_template_directory_uri() . '/js/theme-customizer.js',//Point to file
+          array( 'jquery','customize-preview' ),    //Define dependencies
+          '',                       //Define a version (optional) 
+          true                      //Put script in footer?
+    ));
+/*if(wp_script_is( 'mytheme-themecustomizer', $list = 'enqueued' ))
+    echo 'a';
+else
+    echo 'b';*/
+ require_once('opening_hour.php'); 
+ require_once('contacts.php'); 
