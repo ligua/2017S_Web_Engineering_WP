@@ -32,15 +32,10 @@
 
 		<!-- Header -->
 		<header class="cover">
-			<?php $header = get_header_image();
-				if($header){?>
-					<img src="<?php header_image() ?>" alt="">
-				<?php }else{?>
-					<div style="background-image: url(<?php bloginfo('template_directory'); ?>/images/header.jpg); background-size: 100vw 40vw; background-repeat: no-repeat; width: 100vw; height: 40vw; position: initial;"></div>
-				<?php } ?>
+			<img id="header_image" src="<?php header_image() ?>" alt="">
 			<div id="cover_title">
 				<h2> <?php bloginfo( 'description' ); ?> </h2>
-				<h1 id="cover_title1"> <?php bloginfo( 'name' ); ?> </h1>
+				<h1 id="cover_titleh1"> <?php bloginfo( 'name' ); ?> </h1>
 			</div>
 			<div id="cover_book">
 				<a href="#h_book">Book a Table</a>
@@ -397,20 +392,20 @@
 						<h2> Opening Hour </h2>
 						<p> </p> </br>
 
-						<p> <b> MONDAY : </b>  <?php echo get_theme_mod("MONDAY") ?> </p> </br>
-						<p> <b>TUE-FRI : </b><?php echo get_theme_mod("TUEFRI") ?></p> </br>
-						<p> <b>SAT-SUN : </b><?php echo get_theme_mod("SATSUN") ?></p> </br>
-						<p> <b>HOLIDAYS : </b><?php echo get_theme_mod("HOLIDAYS") ?></p> </br>
+						<p id="monday"> <b>MONDAY : </b><?php echo get_theme_mod("MONDAY") ?></p> </br>
+						<p id="tuefri"> <b>TUE-FRI : </b><?php echo get_theme_mod("TUEFRI") ?></p> </br>
+						<p id="satsun"> <b>SAT-SUN : </b><?php echo get_theme_mod("SATSUN") ?></p> </br>
+						<p id="holidays"> <b>HOLIDAYS : </b><?php echo get_theme_mod("HOLIDAYS") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>
 					<div id="h_l_contact" >
 						<h2>  Contacts </h2>
 						<p> </p> </br>
-						<p> <b>ADDRESS : </b><?php echo get_theme_mod("City") ?></p> </br>
-						<p> <?php echo get_theme_mod("Street") ?></p> </br>
-						<p> <b>PHONE : </b><?php echo get_theme_mod("PHONE") ?></p> </br>
-						<p> <b>EMAIL : </b><?php echo get_theme_mod("EMAIL") ?></p> </br>
+						<p id="city"> <b>ADDRESS : </b><?php echo get_theme_mod("City") ?></p> </br>
+						<p id="street"> <?php echo get_theme_mod("Street") ?></p> </br>
+						<p id="phone"> <b>PHONE : </b><?php echo get_theme_mod("PHONE") ?></p> </br>
+						<p id="email"> <b>EMAIL : </b><?php echo get_theme_mod("EMAIL") ?></p> </br>
 						<p> </p> </br>
 						<p> </p> </br>
 					</div>	
