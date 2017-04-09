@@ -298,47 +298,75 @@
 				<div id="l_events">
 				<header class="event-header"><b> Upcoming Events </b></header>
 				<article class="events">
-					<?php for ($i=0;$i<((count($eventlist_upcoming)>3)?3:count($eventlist_upcoming));$i++)    {?>
-
-						<section class="event">
-							<figure>
-								<img src=<?php  echo "\"".wp_get_attachment_url($eventlist_upcoming[$i]["event_image"][0])."\"" ?> alt="" />
-							</figure>
-							<figcaption>
-								<?php $sd = new DateTime($eventlist_upcoming[$i]["event_stime"][0]); ?>
-								<?php $ed = new DateTime($eventlist_upcoming[$i]["event_etime"][0]); ?>
-								<h3><?php  echo $eventlist_upcoming[$i]["event_pname"][0] ?> </h3>
-								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
-							</figcaption>
-							<article class="event-content">
-								<p><?php  echo $eventlist_upcoming[$i]["event_description"][0] ?></a> </p>
-							</article>
-						</section>
-					<?php }
-					?>
-
-
-
-
-
+					<section class="event">
+						<figure>
+							<img src="<?php bloginfo('template_directory'); ?>/images/cooking.jpg" alt="" />
+						</figure>
+						<figcaption>
+							<h3>Learning to Cook</h3>
+							<h2>12/03/2017</br>10:30 a.m.</h2>
+						</figcaption>
+						<article class="event-content">
+						<p>Get the basic skills every home cook needs to be successful and happy in the kitchen. Ditch recipes by learning basic cooking formulas. Come and learn how to <a href=""> [Read More]</a></p>
+						</article>		
+					</section>
+					<section class="event">
+						<figure>
+							<img src="<?php bloginfo('template_directory'); ?>/images/2.jpg" alt="" />
+						</figure>
+						<figcaption>
+							<h3>Pasta Day</h3>
+							<h2>11/03/2017</br>18:00 - 23:00</h2>
+						</figcaption>
+						<article class="event-content">
+							<p>The fresh pastas offered at LaPlace are made right in our restaurant. And if you've only ever had boxed pastas, you are truly missing out! Once evert two months we celebrate Pasta with an event <a href=""> [Read More]</a></p>
+						</article>
+					</section>
+					<section class="event">
+						<figure>
+							<img src="<?php bloginfo('template_directory'); ?>/images/3.png" alt="" />
+						</figure>
+						<figcaption>
+							<h3>Happy Hour</h3>
+							<h2>03/03/2017</br>18:00 - 23:00</h2>
+						</figcaption>
+						<article class="event-content">
+							<p>It's Friday!!! Come and enjoy the start of the weekend with us. Our Happy Hours offer the best combination of nice drinks and food. To reserve a sit please register to the event <a href=""> [Read More]</a> </p>
+						</article>
+					</section>
 				</article>
 				</div>
 				<article id="l_past_events">
 					<header class="event-header"> <b> Past Events </b> </header>
 					<section class="events">
-					<?php for ($i=0;$i<((count($eventlist_past)>4)?4:count($eventlist_past));$i++)    {?>
 						<figure  class="past-event">
-							<img src=<?php  echo "\"".wp_get_attachment_url($eventlist_past[$i]["event_image"][0])."\"" ?> alt="" />
+							<img src="<?php bloginfo('template_directory'); ?>/images/4.jpg" alt="" />
 							<a href="">
-								<?php $sd = new DateTime($eventlist_past[$i]["event_stime"][0]); ?>
-								<?php $ed = new DateTime($eventlist_past[$i]["event_etime"][0]); ?>
-								<h3><?php  echo $eventlist_past[$i]["event_pname"][0] ?> </h3>
-								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
+								<h3>10th Anniversary</h3>
+								<h2>01/12/2016 18:00 - 23:00</h2>
 							</a>
 						</figure>
-					<?php } ?>
-						
-							
+						<figure class="past-event">
+							<img src="<?php bloginfo('template_directory'); ?>/images/2.jpg" alt="" />
+							<a href="">
+								<h3>Pasta Day</h3>
+								<h2>20/11/2016 18:00 - 23:00</h2>
+							</a>
+						</figure>
+						<figure  class="past-event">
+							<img src="<?php bloginfo('template_directory'); ?>/images/3.png" alt="" />
+							<a href="">
+								<h3>Happy Hour</h3>
+								<h2>11/11/2016 18:00 - 23:00</h2>
+							</a>
+						</figure>
+						<figure  class="past-event">
+							<img src="<?php bloginfo('template_directory'); ?>/images/cooking.jpg" alt="" />
+							<a href="">
+								<h3>Salsa</h3>
+								<h2>01/11/2016 18:00 - 23:00</h2>
+							</a>
+						</figure>		
 					</section>
 					</br> </br>
 					<section>
