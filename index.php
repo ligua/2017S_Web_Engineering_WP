@@ -14,6 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.php"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ex2_move.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/onepage_nav.js"></script>
 		<?php wp_head(); ?>
 	</head>
 
@@ -294,7 +295,7 @@
 								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
 							</figcaption>
 							<article class="event-content">
-								<p><?php  echo $eventlist_upcoming[$i]["event_description"][0] ?></a> </p>
+								<p><?php print $eventlist_upcoming[$i]["event_description"][0] ?> <a href="#" onclick="readMore(<?php echo $eventlist_upcoming[$i]["post_id"][0] ?>); return false;">[Read More]</a></p>
 							</article>
 						</section>
 					<?php }

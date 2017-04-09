@@ -58,6 +58,7 @@
         if( ! current_user_can( 'edit_post', $post->ID )){
             return $post->ID;
         }
+        $event_post_meta['post_id'] = $post_id;
         $event_post_meta['event_pname'] = $_POST['pname'];
         $event_post_meta['event_description'] = $_POST['description'];
         $event_post_meta['event_image'] = $_POST['upload_image_id'];
