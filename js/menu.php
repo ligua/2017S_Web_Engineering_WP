@@ -41,8 +41,16 @@ function get_content_list($field_name)
                 echo "\",";
             endwhile;
         endif;
-        //echo "\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\"]";
-        echo "]";
+        $prefix = "'http://localhost/wordpress/wp-content/themes/2017S_Web_Engineering_WP/images/menu/wait.jpg'";
+        if ($field_name!="dish_image")
+        {
+            echo "\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\"]";
+        }
+        else
+        {
+            echo $prefix.",".$prefix.",".$prefix.",",$prefix.",".$prefix.",".$prefix."]";
+        }
+      
         if ($i!=3) echo ",";
     }
     echo "]";
