@@ -255,8 +255,10 @@
 	            endwhile;
 	        endif;
 	        
-	        function cmp($a,$b)
+	        function cmp($aa,$bb)
 	        {
+	        	$a = new DateTime($aa["event_stime"][0]);
+	        	$b = new DateTime($bb["event_stime"][0]);
 	        	if ($a == $b) {
         		return 0;
     			}	
@@ -265,6 +267,8 @@
 	        usort($eventlist_past,"cmp");
 	        function cmp2($a,$b)
 	        {
+	        	$a = new DateTime($aa["event_stime"][0]);
+	        	$b = new DateTime($bb["event_stime"][0]);
 	        	if ($a == $b) {
         		return 0;
     			}	
@@ -302,11 +306,6 @@
 						</section>
 					<?php }
 					?>
-
-
-
-
-
 				</article>
 				</div>
 				<article id="l_past_events">
