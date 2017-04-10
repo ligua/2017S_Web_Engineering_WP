@@ -282,7 +282,7 @@
 
 		<!-- event -->
 		<section>
-			<?php echo count($eventlist_upcoming);?>
+			
 			<?php if(get_background_color()){ ?>
 			<div class="back-grey1">
 			<?php } ?>
@@ -318,8 +318,9 @@
 							<a href="">
 								<?php $sd = new DateTime($eventlist_past[$i]["event_stime"][0]); ?>
 								<?php $ed = new DateTime($eventlist_past[$i]["event_etime"][0]); ?>
-								<h3><a href="event-detail" onclick="readMorePast(<?php echo $eventlist_past[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_past[$i]["event_pname"][0] ?></a></h3>
-								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
+								<h3><a href="event-detail" onclick="readMorePast(<?php echo $eventlist_past[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_past[$i]["event_pname"][0] ?></a>
+								</h3>
+								<a href=""><h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2></a>
 							</a>
 						</figure>
 					<?php } ?>
