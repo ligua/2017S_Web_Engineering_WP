@@ -292,11 +292,11 @@
 							<figcaption>
 								<?php $sd = new DateTime($eventlist_upcoming[$i]["event_stime"][0]); ?>
 								<?php $ed = new DateTime($eventlist_upcoming[$i]["event_etime"][0]); ?>
-								<h3><?php  echo $eventlist_upcoming[$i]["event_pname"][0] ?> </h3>
+								<h3><a href="event-detail" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_upcoming[$i]["event_pname"][0] ?> </a></h3>
 								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
 							</figcaption>
 							<article class="event-content">
-								<p><?php print $eventlist_upcoming[$i]["event_description"][0] ?> <a href="event-detail" onclick="readMore(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
+								<p><?php print $eventlist_upcoming[$i]["event_description"][0] ?> <a href="event-detail" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
 							</article>
 						</section>
 					<?php }
@@ -317,7 +317,7 @@
 							<a href="">
 								<?php $sd = new DateTime($eventlist_past[$i]["event_stime"][0]); ?>
 								<?php $ed = new DateTime($eventlist_past[$i]["event_etime"][0]); ?>
-								<h3><?php  echo $eventlist_past[$i]["event_pname"][0] ?> </h3>
+								<h3><a href="event-detail" onclick="readMorePast(<?php echo $eventlist_past[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_past[$i]["event_pname"][0] ?></a></h3>
 								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
 							</a>
 						</figure>
