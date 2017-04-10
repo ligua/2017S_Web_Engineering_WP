@@ -1276,19 +1276,46 @@ Li Zuoyue Modify Begin
 /*
 Li Zuoyue Modify End
 */
+#readmore_se
+{
+	text-align: center;
+}
 
-.x-button{
+
+#readmore_se input:hover
+{
+	text-align: center;
+	color: black;
+	background-color: rgba(230, 230, 230, 1);
+}
+
+#s_l_past_events
+{
+	width:80%;
+	margin: auto;
+}
+
+.x-button {
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.8);
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5vw;
 	width: 10vw;
-	padding: 1.5vw 3.5vw;
+	height : 5vw;
+	padding: 0;
 	color: white;
 	border: 0.1vw solid;
 	border-radius: 0.3vw;
 	margin: 0 auto;
 
+}
+
+
+.x-button :hover{
+	text-decoration: none;
+	color: black;
+	background-color: rgba(230, 230, 230, 1);
+	
 }
 
 .x-button a{
