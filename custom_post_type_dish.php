@@ -108,6 +108,7 @@
         $image_src = wp_get_attachment_url( $image_id );
  
         ?>
+        
         <img id="book_image" src="<?php echo $image_src ?>" style="max-width:100%;" />
         <input type="hidden" name="upload_image_id" id="upload_image_id" value="<?php echo $image_id; ?>" />
         <p>
@@ -116,11 +117,12 @@
         </p>
 
         <div class="dish">
-        <p> <label>Dish Name<br> <input type="text" name="pname" size="50"
-        value="<?php echo $pname; ?>"> </label>
+        <p> <label>Dish Name<br> <input type="text" name="pname" size="20"
+        value="<?php echo $pname; ?>"> </input></label>
         </p>
-        <p> <label>Description<br> <input type="text" name="description" rows="3" cols="50"
-        value="<?php echo $description; ?>"> </label>
+        <p> <label>Description<br> <textarea  name="description" rows="3" cols="50"
+          >  <?php echo $description; ?> </textarea>
+        </label>
         </p>
 
         </div>

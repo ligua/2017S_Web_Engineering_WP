@@ -118,12 +118,12 @@
         </p>
 
         <div class="event">
-        <p> <label>Event Name<br> <input type="text" name="pname" size="50"
+        <p> <label>Event Name<br> <input type="text" name="pname" size="20"
         value="<?php echo $pname; ?>"> </label>
         </p>
-        <p> <label>Description<br> <input type="text" name="description" rows="3" cols="50"
-        value="<?php echo $description; ?>"> </label>
-        </p>
+        <p><label>Description<br> <textarea  name="description" rows="3" cols="50"
+          >  <?php echo $description; ?> </textarea>
+        </label></p>
          <p> <label>Start Time<br> <input type="datetime-local" name="stime" rows="3" cols="50"
         value="<?php echo $stime; ?>"> </label>
         </p>
