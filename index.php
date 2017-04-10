@@ -333,6 +333,7 @@
 				</article>
 			</div>
 		</section>
+		<script type="text/javascript">history.pushState($(".back-grey1").html(), null, "");</script>
 		<!-- Basic Elements -->
 
 		<!-- Fourth -->

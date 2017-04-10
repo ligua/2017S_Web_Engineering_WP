@@ -1,6 +1,6 @@
 function readMore(post_id){
 	// console.log($(".back-grey1").html());
-	history.pushState($(".back-grey1").html(), null, "index");
+	// history.replaceState(null, null, 'hello');
 	var xmlhttp;
 	xmlhttp= new XMLHttpRequest();
 	xmlhttp.open("GET", "./wp-content/themes/2017S_Web_Engineering_WP/page-event.php?pid="+post_id, true);
