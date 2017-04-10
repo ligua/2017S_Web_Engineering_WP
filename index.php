@@ -282,6 +282,7 @@
 
 		<!-- event -->
 		<section>
+			<?php echo count($eventlist_upcoming);?>
 			<?php if(get_background_color()){ ?>
 			<div class="back-grey1">
 			<?php } ?>

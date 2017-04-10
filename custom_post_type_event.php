@@ -33,12 +33,14 @@
             'rewrite' => true,
             'capability_type' => 'post',
             'hierarchical' => false,
+            'register_meta_box_cb' => 'add_event_post_type_metabox',
             'supports' => array(
                     //'title',
+                    'excerpt',
                     'thumbnail',
                     //'editor',
                     //'author',
-                    'excerpt',
+                    
                     //'trackbacks',
                     //'custom-fields',
                     //'comments',
@@ -46,8 +48,8 @@
                     //'page-attributes',
                     //'post-formats',
                     ),
-            'menu_position' =>5,
-            'register_meta_box_cb' => 'add_event_post_type_metabox'
+            'menu_position' =>5
+            
         );
         register_post_type( 'event', $args );
         
