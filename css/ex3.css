@@ -1,0 +1,21 @@
+#event-detail {
+	/*text-align: center;*/
+	/*display: inline-flex;*/
+	width: 70%;
+	margin: 0 auto;
+	/*justify-content: space-between;*/
+}
+
+#event-detail-text{
+	display: inline-block;
+	width: 70%;
+	float: right;
+}
+
+#event-detail-text div{
+	/*display: inline;*/
+}
+
+#event-detail-text h2{
+	margin-top: 0;
+}
