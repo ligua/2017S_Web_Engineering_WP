@@ -41,7 +41,8 @@ function get_content_list($field_name)
                 echo "\",";
             endwhile;
         endif;
-        echo "\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\"]";
+        //echo "\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\",\"Empty\"]";
+        echo "]";
         if ($i!=3) echo ",";
     }
     echo "]";

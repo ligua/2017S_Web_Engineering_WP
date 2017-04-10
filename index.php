@@ -14,6 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.php"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ex2_move.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/event_readmore_ajax.php"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/onepage_nav.js"></script>
 		<?php wp_head(); ?>
 	</head>
@@ -309,7 +310,7 @@
 				</div>
 				<article id="l_past_events">
 					<header class="event-header"> <b> Past Events </b> </header>
-					<section class="events">
+					<section id="s_l_past_events" class="events">
 					<?php for ($i=0;$i<((count($eventlist_past)>4)?4:count($eventlist_past));$i++)    {?>
 						<figure  class="past-event">
 							<img src=<?php  echo "\"".wp_get_attachment_url($eventlist_past[$i]["event_image"][0])."\"" ?> alt="" />
@@ -325,10 +326,9 @@
 							
 					</section>
 					</br> </br>
-					<section>
-						<div class="x-button">
-							<a href="#second" >See More</a>
-						</div>
+					<section id = "readmore_se">
+						<input type="submit" onclick="hj_readmore()" id="b_readmore" class="x-button" value="See More">
+						</input>
 					</section>
 				</article>
 			</div>
