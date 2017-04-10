@@ -295,7 +295,7 @@
 								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
 							</figcaption>
 							<article class="event-content">
-								<p><?php print $eventlist_upcoming[$i]["event_description"][0] ?> <a href="#" onclick="readMore(<?php echo $eventlist_upcoming[$i]["post_id"][0] ?>); return false;">[Read More]</a></p>
+								<p><?php print $eventlist_upcoming[$i]["event_description"][0] ?> <a href="event-detail" onclick="readMore(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
 							</article>
 						</section>
 					<?php }
