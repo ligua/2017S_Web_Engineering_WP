@@ -4,6 +4,7 @@
     	$pid = $_GET['pid'];
     	$custom_fields = get_post_custom($pid);
     	?>
+        <div>
     	<header class="event-header"><b> Past Events </b></header>
         <div id="event-detail">
             <img src = "<?php  echo wp_get_attachment_url($custom_fields["event_image"][0]) ?>" alt="" />
@@ -20,6 +21,7 @@
                     <?php  echo $custom_fields["event_description"][0] ?>
                 </div>
             </div>
+        </div>
         </div>
     <?php } ?>
 	
