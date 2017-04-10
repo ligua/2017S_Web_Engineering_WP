@@ -53,14 +53,9 @@ function hj_readless()
         var br = document.getElementById('b_readmore');
         br.setAttribute("onclick","hj_readmore()");
         br.setAttribute("value","See more");
-
-
-
-
-
     }
   };
-  xhttp.open("GET", "#", true);
+  xhttp.open("GET", "http://localhost/wordpress/", true);
   xhttp.send();
 }
 
@@ -85,6 +80,6 @@ function hj_readmore() {
 
     }
   };
-  xhttp.open("GET", "#", true);
+  xhttp.open("GET", "http://localhost/wordpress/", true);
   xhttp.send();
 }
