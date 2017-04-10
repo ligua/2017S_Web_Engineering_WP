@@ -64,6 +64,7 @@
         $event_post_meta['event_image'] = $_POST['upload_image_id'];
         $event_post_meta['event_stime'] = $_POST['stime'];
         $event_post_meta['event_etime'] = $_POST['etime'];
+        echo $_POST['etime'];
         // add values as custom fields
         //update_post_meta($post->ID, "title", $_POST['pname']);
         //update_option("title", $_POST['pname']);
