@@ -121,7 +121,7 @@
         value="<?php echo $pname; ?>"> </input></label>
         </p>
         <p> <label>Description<br> <textarea  name="description" rows="3" cols="50"
-          >  <?php echo $description; ?> </textarea>
+          ><?php echo $description; ?></textarea>
         </label>
         </p>
 

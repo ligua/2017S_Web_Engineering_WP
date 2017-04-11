@@ -15,7 +15,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.php"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ex2_move.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/event_readmore_ajax.php"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/event_readmore_ajax.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/onepage_nav.js"></script>
 		<?php wp_head(); ?>
 	</head>
@@ -320,7 +320,17 @@
 								<?php $ed = new DateTime($eventlist_past[$i]["event_etime"][0]); ?>
 								<h3><a href="event-detail" onclick="readMorePast(<?php echo $eventlist_past[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_past[$i]["event_pname"][0] ?></a>
 								</h3>
+								<?php  if ($eventlist_past[$i]["event_etime"][0]=="")
+								{?>
+								<a href=""><h2><?php  echo $sd->format("Y-m-d h:i") ?>  </h2></a>	
+								<?php
+								}
+								else
+								{
+								?> 
+
 								<a href=""><h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2></a>
+								<?php }?>
 							</a>
 						</figure>
 					<?php } ?>

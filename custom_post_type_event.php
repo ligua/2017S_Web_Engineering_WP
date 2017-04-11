@@ -67,6 +67,15 @@
         $event_post_meta['event_image'] = $_POST['upload_image_id'];
         $event_post_meta['event_stime'] = $_POST['stime'];
         $event_post_meta['event_etime'] = $_POST['etime'];
+        echo $_POST['stime'];
+        echo $_POST['stime'];
+        echo $_POST['stime'];
+        echo $_POST['etime'];
+        echo $_POST['etime'];
+        echo $_POST['etime'];
+        echo $_POST['etime'];
+        echo $_POST['etime'];
+
         echo $_POST['etime'];
         // add values as custom fields
         //update_post_meta($post->ID, "title", $_POST['pname']);
@@ -124,7 +133,7 @@
         value="<?php echo $pname; ?>"> </label>
         </p>
         <p><label>Description<br> <textarea  name="description" rows="3" cols="50"
-          >  <?php echo $description; ?> </textarea>
+          ><?php echo $description; ?></textarea>
         </label></p>
          <p> <label>Start Time<br> <input type="datetime-local" name="stime" rows="3" cols="50"
         value="<?php echo $stime; ?>"> </label>
