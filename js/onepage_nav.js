@@ -1,3 +1,4 @@
+
 function readMoreUp(post_id){
 	var xmlhttp;
 	xmlhttp= new XMLHttpRequest();
@@ -28,9 +29,8 @@ function readMorePast(post_id){
 }
 
 window.addEventListener('popstate', function(e) {
-  var character = e.state;
-  if (character != null) {
-    $(".back-grey1").html(character);
-  }
+	var character = e.state;
+	if (character != null) {
+		$(".back-grey1").html(character);
+	}
 });
-
