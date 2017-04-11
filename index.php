@@ -315,10 +315,9 @@
 					<?php for ($i=0;$i<((count($eventlist_past)>4)?4:count($eventlist_past));$i++)    {?>
 						<figure  class="past-event">
 							<img src=<?php  echo "\"".wp_get_attachment_url($eventlist_past[$i]["event_image"][0])."\"" ?> alt="" />
-							<a href="">
 								<?php $sd = new DateTime($eventlist_past[$i]["event_stime"][0]); ?>
 								<?php $ed = new DateTime($eventlist_past[$i]["event_etime"][0]); ?>
-								<h3><a onclick="readMorePast(<?php echo $eventlist_past[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_past[$i]["event_pname"][0] ?></a>
+								<h3><a href="" onclick="readMorePast(<?php echo $eventlist_past[$i]["pid"][0] ?>); return false;"><?php  echo $eventlist_past[$i]["event_pname"][0] ?></a>
 								</h3>
 								<?php  if ($eventlist_past[$i]["event_etime"][0]=="")
 								{?>
