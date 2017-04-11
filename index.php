@@ -262,10 +262,10 @@
 	        	if ($a == $b) {
         		return 0;
     			}	
-    			return ($a < $b) ? -1 : 1;
+    			return ($a > $b) ? -1 : 1;
 	        }
 	        usort($eventlist_past,"cmp");
-	        function cmp2($a,$b)
+	        function cmp2($aa,$bb)
 	        {
 	        	$a = new DateTime($aa["event_stime"][0]);
 	        	$b = new DateTime($bb["event_stime"][0]);
