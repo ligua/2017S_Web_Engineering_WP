@@ -282,7 +282,23 @@
 
 		<!-- event -->
 		<section>
-			
+			<?php  
+				function get_abstract($s)
+				{
+					$ls = strlen($s);
+					$i = 200;
+					if ($ls<$i) return $s;
+
+					
+					while ($i<$ls && $s[$i]!=' ') $i++;
+					
+					return substr($s,0,$i);
+				}
+
+
+
+
+			?>
 			<?php if(get_background_color()){ ?>
 			<div class="back-grey1">
 			<?php } ?>
@@ -303,9 +319,9 @@
 							</figcaption>
 							<article class="event-content">
 								<p><?php if($eventlist_upcoming[$i]["event_excerpt"]){
-										print $eventlist_upcoming[$i]["event_excerpt"][0];
+										print get_abstract($eventlist_upcoming[$i]["event_excerpt"][0]);
 									}else{
-										print $eventlist_upcoming[$i]["event_description"][0];
+										print get_abstract($eventlist_upcoming[$i]["event_description"][0]);
 									} ?> <a href="" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
 							</article>
 						</section>
