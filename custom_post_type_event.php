@@ -36,7 +36,7 @@
             'register_meta_box_cb' => 'add_event_post_type_metabox',
             'supports' => array(
                     //'title',
-                    'excerpt',
+                    // 'excerpt',
                     'thumbnail',
                     //'editor',
                     //'author',
@@ -63,7 +63,7 @@
         $event_post_meta['pid'] = $post->ID;
         $event_post_meta['event_pname'] = $_POST['pname'];
         $event_post_meta['event_description'] = $_POST['description'];
-        $event_post_meta['event_excerpt'] = $_POST['excerpt'];
+        // $event_post_meta['event_excerpt'] = $_POST['excerpt'];
         $event_post_meta['event_image'] = $_POST['upload_image_id'];
         $event_post_meta['event_stime'] = $_POST['stime'];
         $event_post_meta['event_etime'] = $_POST['etime'];

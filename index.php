@@ -318,11 +318,7 @@
 								<h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2>
 							</figcaption>
 							<article class="event-content">
-								<p><?php if($eventlist_upcoming[$i]["event_excerpt"]){
-										print get_abstract($eventlist_upcoming[$i]["event_excerpt"][0]);
-									}else{
-										print get_abstract($eventlist_upcoming[$i]["event_description"][0]);
-									} ?> <a href="" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
+								<p><?php print get_abstract($eventlist_upcoming[$i]["event_description"][0]);?> <a href="" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
 							</article>
 						</section>
 					<?php }
