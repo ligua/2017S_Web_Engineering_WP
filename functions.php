@@ -1,7 +1,6 @@
 <?php
 
 require_once('custom_post_type_dish.php'); 
-
 require_once('custom_post_type_event.php'); 
 //require_once('custom-post-type-image-upload.php'); 
 function my_function_admin_bar(){ return false; }

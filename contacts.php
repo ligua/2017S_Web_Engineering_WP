@@ -56,7 +56,7 @@ function contact_customizer_register( $wp_customize ) {
         ) );
     $wp_customize->add_control( 'EMAIL', array(
         'section' => 'contacts_section',
-        'label' => __( 'Email', 'textdomain' ),
+        'label' => __( 'Email', 'textdomain'),
         'description' => '',
     ) );
 
