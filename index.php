@@ -27,7 +27,7 @@
 			<ul>
 				<li><a href="#first">About</a></li>
 				<li><a href="#menu">Menu</a></li>
-				<li><a href="index.html"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt=""></a></li>
+				<li><a href="index.php"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt=""></a></li>
 				<li><a href="#events">Events</a></li>
 				<li><a href="#f_h_opening_hour_contracts">Contacts</a></li>
 			</ul>

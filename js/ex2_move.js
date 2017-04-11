@@ -24,7 +24,7 @@ function isInPartViewportVertical(element) {
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("welcome");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -33,7 +33,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("l_high_quality");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -42,7 +42,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("only_best");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -51,7 +51,7 @@ $(document).scroll(
 $(document).ready(
 	function() {
 		var ele = document.getElementById("welcome");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -60,7 +60,7 @@ $(document).ready(
 $(document).ready(
 	function() {
 		var ele = document.getElementById("l_high_quality");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -69,7 +69,7 @@ $(document).ready(
 $(document).ready(
 	function() {
 		var ele = document.getElementById("only_best");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -98,7 +98,7 @@ $(document).ready(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("events");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -107,7 +107,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("l_events");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -116,7 +116,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("l_past_events");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -125,7 +125,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("h_contact");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -134,7 +134,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("h_book2");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
@@ -143,7 +143,7 @@ $(document).scroll(
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("h_opening_hour_contracts");
-		if (isInPartViewportVertical(ele)) {
+		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
 		}
 	}
