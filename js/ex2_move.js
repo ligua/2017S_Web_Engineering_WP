@@ -113,11 +113,16 @@ $(document).scroll(
 	}
 );
 
+var f_l_past_events = 0;
 $(document).scroll(
 	function() {
 		var ele = document.getElementById("l_past_events");
 		if (ele != null && isInPartViewportVertical(ele)) {
 			ele.style.animationPlayState = "running";
+			f_l_past_events += 1;
+			if (f_l_past_events > 20) {
+				ele.style.animationDuration = "0s";
+			}
 		}
 	}
 );
