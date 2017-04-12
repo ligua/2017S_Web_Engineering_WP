@@ -13,11 +13,8 @@ if(isset($_GET['pid'])){
 			$ed = new DateTime($custom_fields["event_etime"][0]); ?>
 		</div>
 		<div id="event-detail-text">
-			<div>
-				<h2><?php echo $custom_fields["event_pname"][0] ?></h2>
-			</div>
-			<div>
-				<?php
+			<h2><?php echo $custom_fields["event_pname"][0] ?></h2>
+			<?php
 				if ($custom_fields["event_etime"][0]=="")
 				{
 				?>
@@ -27,11 +24,8 @@ if(isset($_GET['pid'])){
 				<p><?php echo $sd->format("Y-m-d H:i") ?> - <?php echo $ed->format("Y-m-d H:i") ?></p>
 				<?php
 				}
-				?>
-			</div>
-			<div>
-				<?php echo $custom_fields["event_description"][0] ?>
-			</div>
+			?>
+			<p><?php echo $custom_fields["event_description"][0] ?></p>
 		</div>
 	</div>
 	<div class="x-clear"></div>

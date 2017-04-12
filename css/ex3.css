@@ -1,5 +1,5 @@
 #event-detail {
-	width: 80vw;
+	width: 70vw;
 	margin: 0vw 15vw 5vw 15vw;
 }
 
@@ -19,10 +19,10 @@
 	border: 0.1vw solid white;
 }
 
-#event-detail-text{
+#event-detail-text {
 	display: inline-block;
 	vertical-align: middle;
-	width: 49.9vw;
+	width: 48vw;
 }
 
 #event-detail-text h2{
@@ -31,5 +31,6 @@
 }
 
 #event-detail-text p{
+	margin: 2vw 0vw 0vw 0vw;
 	font-size: 2vw;
 }
