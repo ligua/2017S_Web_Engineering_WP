@@ -117,8 +117,8 @@
         <img id="book_image" src="<?php echo $image_src ?>" style="max-width:100%;" />
         <input type="hidden" name="upload_image_id" id="upload_image_id" value="<?php echo $image_id; ?>" />
         <p>
-            <a title="<?php esc_attr_e( 'Set dishes image' ) ?>" href="#" id="set-book-image"><?php _e( 'Set book image' ) ?></a>
-            <a title="<?php esc_attr_e( 'Remove dishes image' ) ?>" href="#" id="remove-book-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove book image' ) ?></a>
+            <a title="<?php esc_attr_e( 'Set dishes image' ) ?>" href="#" id="set-book-image"><?php _e( 'Set dish image' ) ?></a>
+            <a title="<?php esc_attr_e( 'Remove dishes image' ) ?>" href="#" id="remove-book-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove dish image' ) ?></a>
         </p>
 
         <div class="dish">
