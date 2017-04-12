@@ -4,7 +4,6 @@
     	$pid = $_GET['pid'];
     	$custom_fields = get_post_custom($pid);
     	?>
-    	<div>
 			<header class="event-header"><b> Upcoming Events </b></header>
             <div id="event-detail">
                 <img src = "<?php  echo wp_get_attachment_url($custom_fields["event_image"][0]) ?>" alt="" />
@@ -22,7 +21,6 @@
                 </div>
             </div>
             </div>
-        </div>
     	
     <?php } ?>
 	
