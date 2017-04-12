@@ -1164,10 +1164,12 @@ Li Zuoyue Modify Begin
 	}
 
 	.past-event h3 {
-		margin: 3vw 0vw 3vw 0vw;
-		height: 5vw;
-		line-height: 2.5vw;
-		overflow: scroll;
+		/*margin: 3vw 0vw 3vw 0vw;*/
+		/*height: 5vw;*/
+		/*line-height: 2.5vw;*/
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 }
@@ -1268,10 +1270,12 @@ Li Zuoyue Modify Begin
 	}
 
 	.past-event h3 {
-		margin: 6vw 0vw 6vw 0vw;
+		/*margin: 6vw 0vw 6vw 0vw;
 		height: 14vw;
-		line-height: 6vw;
-		overflow: scroll;
+		line-height: 6vw;*/
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 }
