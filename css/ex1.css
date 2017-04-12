@@ -210,13 +210,6 @@ figure {
 	animation-play-state: paused;
 }
 
-#events {
-	animation-name: moveRight;
-	animation-duration: 2s;
-	position: relative;
-	animation-play-state: paused;
-}
-
 #l_events {
 	animation-name: moveUp;
 	animation-duration: 2s;

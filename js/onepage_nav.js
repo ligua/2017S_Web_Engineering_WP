@@ -32,5 +32,11 @@ window.addEventListener('popstate', function(e) {
 	var character = e.state;
 	if (character != null) {
 		$(".back-grey1").html(character);
+		if($("#l_events")){
+			$("#l_events").css('animation','none');
+		}
+		if($("#l_past_events")){
+			$("#l_past_events").css('animation','none');
+		}
 	}
 });
