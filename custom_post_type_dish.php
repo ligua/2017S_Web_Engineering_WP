@@ -59,6 +59,9 @@
     }
 
     function dish_post_save_meta( $post_id, $post ) {
+        if ($post->post_type != 'dish'){
+            return $post->ID;
+        }
         // is the user allowed to edit the post or page?
         global $wpdb;
         if( ! current_user_can( 'edit_post', $post->ID )){
@@ -98,7 +101,7 @@
     add_action( 'save_post', 'dish_post_save_meta', 1, 2 );
 
     function add_dish_post_type_metabox() {
-        add_meta_box( 'dish_metabox', 'dish Data', 'dish_metabox', 'dish', 'normal' );
+        add_meta_box( 'dish_metabox', 'Dish Data', 'dish_metabox', 'dish', 'normal' );
     }
     function dish_metabox() {
         global $post;

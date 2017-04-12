@@ -56,6 +56,9 @@
     }
 
     function event_post_save_meta( $post_id, $post ) {
+        if ($post->post_type != 'event'){
+            return $post->ID;
+        }
         // is the user allowed to edit the post or page?
         global $wpdb;
         if( ! current_user_can( 'edit_post', $post->ID )){
@@ -99,7 +102,7 @@
     add_action( 'save_post', 'event_post_save_meta', 1, 2 );
 
     function add_event_post_type_metabox() {
-        add_meta_box( 'event_metabox', 'event Data', 'event_metabox', 'event', 'normal' );
+        add_meta_box( 'event_metabox', 'Event Data', 'event_metabox', 'event', 'normal' );
     }
     function event_metabox() {
         global $post;
