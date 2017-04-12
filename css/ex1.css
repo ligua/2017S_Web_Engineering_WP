@@ -1144,9 +1144,9 @@ Li Zuoyue Modify Begin
 
 	.past-event {
 		display: inline-block;
-		width: 18vw;
+		width: 17vw;
 		text-align: center;
-		margin: 2vw;
+		margin: 2vw 1vw;
 	}
 
 	.past-event img {
