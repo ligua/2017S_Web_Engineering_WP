@@ -317,13 +317,13 @@
 								<h3><a href="" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;"><?php echo $eventlist_upcoming[$i]["event_pname"][0] ?></a></h3>
 								<?php if ($eventlist_upcoming[$i]["event_etime"][0]=="")
 								{?>
-								<a href=""><h2><?php echo $sd->format("Y-m-d H:i") ?></h2></a>	
+								<h2><?php echo $sd->format("Y-m-d H:i") ?></h2>
 								<?php
 								}
 								else
 								{
 								?> 
-								<a href=""><h2><?php echo $sd->format("Y-m-d H:i") ?></br><?php echo $ed->format("Y-m-d H:i") ?></h2></a>
+								<h2><?php echo $sd->format("Y-m-d H:i") ?></br><?php echo $ed->format("Y-m-d H:i") ?></h2>
 								<?php }?>
 							</figcaption>
 							<article class="event-content">
@@ -346,13 +346,13 @@
 								</h3>
 								<?php if ($eventlist_past[$i]["event_etime"][0]=="")
 								{?>
-								<a href=""><h2><?php  echo $sd->format("Y-m-d H:i") ?></h2></a>	
+								<h2><?php echo $sd->format("Y-m-d H:i") ?></h2>
 								<?php
 								}
 								else
 								{
 								?> 
-								<a href=""><h2><?php  echo $sd->format("Y-m-d H:i") ?></br><?php  echo $ed->format("Y-m-d H:i") ?> </h2></a>
+								<h2><?php echo $sd->format("Y-m-d H:i") ?></br><?php echo $ed->format("Y-m-d H:i") ?></h2>
 								<?php }?>
 							</a>
 						</figure>

@@ -1146,6 +1146,7 @@ Li Zuoyue Modify Begin
 		display: inline-block;
 		width: 17vw;
 		text-align: center;
+		vertical-align: top;
 		margin: 2vw 1vw;
 	}
 
@@ -1159,7 +1160,7 @@ Li Zuoyue Modify Begin
 		font-size: 2vw;
 	}
 
-	.past-event a h2{
+	.past-event h2{
 		font-size: 1.5vw;
 	}
 
