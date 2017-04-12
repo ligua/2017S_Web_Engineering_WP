@@ -60,12 +60,17 @@
 
     function dish_post_save_meta( $post_id, $post ) {
         // is the user allowed to edit the post or page?
+        global $wpdb;
         if( ! current_user_can( 'edit_post', $post->ID )){
             return $post->ID;
         }
         $dish_post_meta['dish_pname'] = $_POST['pname'];
         $dish_post_meta['dish_description'] = $_POST['description'];
         $dish_post_meta['dish_image'] = $_POST['upload_image_id'];
+
+        $title = $_POST['pname'];
+        $where = array( 'ID' => $post_id );
+        $wpdb->update( $wpdb->posts, array( 'post_title' => $title ), $where );
         // add values as custom fields
         //update_post_meta($post->ID, "title", $_POST['pname']);
         //update_option("title", $_POST['pname']);

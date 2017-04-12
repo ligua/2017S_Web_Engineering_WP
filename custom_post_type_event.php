@@ -57,6 +57,7 @@
 
     function event_post_save_meta( $post_id, $post ) {
         // is the user allowed to edit the post or page?
+        global $wpdb;
         if( ! current_user_can( 'edit_post', $post->ID )){
             return $post->ID;
         }
@@ -67,16 +68,10 @@
         $event_post_meta['event_image'] = $_POST['upload_image_id'];
         $event_post_meta['event_stime'] = $_POST['stime'];
         $event_post_meta['event_etime'] = $_POST['etime'];
-        echo $_POST['stime'];
-        echo $_POST['stime'];
-        echo $_POST['stime'];
-        echo $_POST['etime'];
-        echo $_POST['etime'];
-        echo $_POST['etime'];
-        echo $_POST['etime'];
-        echo $_POST['etime'];
-
-        echo $_POST['etime'];
+        
+        $title = $_POST['pname'];
+        $where = array( 'ID' => $post_id );
+        $wpdb->update( $wpdb->posts, array( 'post_title' => $title ), $where );
         // add values as custom fields
         //update_post_meta($post->ID, "title", $_POST['pname']);
         //update_option("title", $_POST['pname']);
@@ -114,6 +109,9 @@
         $image = $custom['event_image'][0];
         $stime = $custom['event_stime'][0];
         $etime = $custom['event_etime'][0];
+
+
+
         
 
         $image_src = '';
