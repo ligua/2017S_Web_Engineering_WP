@@ -20,7 +20,7 @@
                     <?php  echo $custom_fields["event_description"][0] ?>
                 </div>
             </div>
-            </div>
+            <div class="x-clear"> </div>
     	
     <?php } ?>
 	

@@ -22,6 +22,7 @@
                 </div>
             </div>
         </div>
+        <div class="x-clear"> </div>
         <!-- </div> -->
     <?php } ?>
 	
