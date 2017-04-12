@@ -1160,7 +1160,7 @@ Li Zuoyue Modify Begin
 		font-size: 2vw;
 	}
 
-	.past-event h2{
+	.past-event h2 {
 		font-size: 1.5vw;
 	}
 
@@ -1266,7 +1266,7 @@ Li Zuoyue Modify Begin
 		font-size: 5vw;
 	}
 
-	.past-event a h2{
+	.past-event h2{
 		font-size: 3.5vw;
 	}
 
@@ -1307,7 +1307,7 @@ Li Zuoyue Modify End
 	background-color: rgba(0, 0, 0, 0.8);
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5vw;
-	width: 10vw;
+	width: 15vw;
 	height : 5vw;
 	padding: 0;
 	color: white;
