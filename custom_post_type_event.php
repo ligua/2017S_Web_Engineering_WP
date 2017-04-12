@@ -122,8 +122,8 @@
         <img id="book_image" src="<?php echo $image_src ?>" style="max-width:100%;" />
         <input type="hidden" name="upload_image_id" id="upload_image_id" value="<?php echo $image_id; ?>" />
         <p>
-            <a title="<?php esc_attr_e( 'Set eventes image' ) ?>" href="#" id="set-book-image"><?php _e( 'Set book image' ) ?></a>
-            <a title="<?php esc_attr_e( 'Remove eventes image' ) ?>" href="#" id="remove-book-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove book image' ) ?></a>
+            <a title="<?php esc_attr_e( 'Set eventes image' ) ?>" href="#" id="set-book-image"><?php _e( 'Set event image' ) ?></a>
+            <a title="<?php esc_attr_e( 'Remove eventes image' ) ?>" href="#" id="remove-book-image" style="<?php echo ( ! $image_id ? 'display:none;' : '' ); ?>"><?php _e( 'Remove event image' ) ?></a>
         </p>
 
         <div class="event">

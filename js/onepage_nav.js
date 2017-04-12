@@ -5,9 +5,8 @@ function readMoreUp(post_id){
 	xmlhttp.open("GET", "./wp-content/themes/2017S_Web_Engineering_WP/event_up.php?pid="+post_id, true);
 	xmlhttp.onreadystatechange= function(){
 		if(xmlhttp.readyState=== 4&&xmlhttp.status=== 200){
-			$(".back-grey1").html(xmlhttp.responseText+$("#l_past_events").html());
-			// $("#l_events").removeAttr('id');
-			// console.log(xmlhttp.responseText+$("#l_past_events").html());
+			$("#l_events").html(xmlhttp.responseText);
+			$("#l_events").css('animation','none');
 			history.pushState($(".back-grey1").html(), null, "");
 		}
 	}
@@ -20,8 +19,8 @@ function readMorePast(post_id){
 	xmlhttp.open("GET", "./wp-content/themes/2017S_Web_Engineering_WP/event_past.php?pid="+post_id, true);
 	xmlhttp.onreadystatechange= function(){
 		if(xmlhttp.readyState=== 4&&xmlhttp.status=== 200){
-			$(".back-grey1").html($("#l_events").html()+xmlhttp.responseText);
-			// $("#l_past_events").removeAttr('id');
+			$("#l_past_events").html(xmlhttp.responseText);
+			$("#l_past_events").css('animation','none');
 			history.pushState($(".back-grey1").html(), null, "");
 		}
 	}
