@@ -356,7 +356,7 @@ figure {
 }
 
 #h_contact {
-	text-align:center;
+	text-align: center;
 	display: inline-block;
 	margin:0;
 }
@@ -1144,7 +1144,7 @@ Li Zuoyue Modify Begin
 
 	.past-event {
 		display: inline-block;
-		width: 15vw;
+		width: 18vw;
 		text-align: center;
 		margin: 2vw;
 	}
@@ -1155,19 +1155,27 @@ Li Zuoyue Modify Begin
 		border: 0.1vw solid white;
 	}
 
-	.past-event a{
-		text-decoration: none;
-		color: white;
-	}
-
-	.past-event a h3{
-		font-size: 1.5vw;
+	.past-event h3 a{
+		font-size: 2vw;
 	}
 
 	.past-event a h2{
-		font-size: 1vw;
+		font-size: 1.5vw;
 	}
 
+	.past-event h3 {
+		margin: 3vw 0vw 3vw 0vw;
+		height: 5vw;
+		line-height: 2.5vw;
+		overflow: scroll;
+	}
+
+}
+
+.past-event a {
+	text-decoration: none;
+	word-wrap: break-word;
+	color: white;
 }
 
 @media screen and (max-width: 767px) {
@@ -1240,7 +1248,7 @@ Li Zuoyue Modify Begin
 
 	.past-event {
 		display: inline-block;
-		width: 40vw;
+		width: 60vw;
 		text-align: center;
 		margin: 2vw;
 	}
@@ -1251,17 +1259,19 @@ Li Zuoyue Modify Begin
 		border: 0.1vw solid white;
 	}
 
-	.past-event a{
-		text-decoration: none;
-		color: white;
-	}
-
-	.past-event a h3{
-		font-size: 1.5vw;
+	.past-event h3 a{
+		font-size: 5vw;
 	}
 
 	.past-event a h2{
-		font-size: 1vw;
+		font-size: 3.5vw;
+	}
+
+	.past-event h3 {
+		margin: 6vw 0vw 6vw 0vw;
+		height: 14vw;
+		line-height: 6vw;
+		overflow: scroll;
 	}
 
 }
@@ -1273,7 +1283,6 @@ Li Zuoyue Modify End
 {
 	text-align: center;
 }
-
 
 #readmore_se input:hover
 {
