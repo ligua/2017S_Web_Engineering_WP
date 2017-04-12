@@ -1,7 +1,12 @@
 ( function( $ ) {
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( newval ) {
-			$( "#cover_titleh1" ).html( newval );
+			if(newval!=""){
+				$( "#cover_titleh1" ).html( newval);
+			}
+			else{
+				$( "#cover_titleh1" ).html("&nbsp");
+			}
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {

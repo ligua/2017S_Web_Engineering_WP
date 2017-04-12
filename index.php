@@ -37,8 +37,8 @@
 		<header class="cover">
 			<img id="header_image" src="<?php header_image() ?>" alt="">
 			<div id="cover_title">
+				<h1 id="cover_titleh1"> <?php if(bloginfo( 'name' )) bloginfo( 'name' ); else echo "&nbsp" ?> </h1>
 				<h2> <?php bloginfo( 'description' ); ?> </h2>
-				<h1 id="cover_titleh1"> <?php bloginfo( 'name' ); ?> </h1>
 			</div>
 			<div id="cover_book">
 				<a href="#h_book">Book a Table</a>
@@ -286,7 +286,7 @@
 				function get_abstract($s)
 				{
 					$ls = strlen($s);
-					$i = 200;
+					$i = 150;
 					if ($ls<$i) return $s;
 
 					
@@ -327,7 +327,7 @@
 								<?php }?>
 							</figcaption>
 							<article class="event-content">
-								<p><?php print get_abstract($eventlist_upcoming[$i]["event_description"][0]);?> <a href="" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
+								<p><?php if($eventlist_upcoming[$i]["event_excerpt"][0]) echo $eventlist_upcoming[$i]["event_excerpt"][0]; else print get_abstract($eventlist_upcoming[$i]["event_description"][0]);?> <a href="" onclick="readMoreUp(<?php echo $eventlist_upcoming[$i]["pid"][0] ?>); return false;">[Read More]</a></p>
 							</article>
 						</section>
 					<?php }
@@ -368,7 +368,7 @@
 				</article>
 			</div>
 		</section>
-		<script type="text/javascript">history.pushState($(".back-grey1").html(), null, "");</script>
+		<script type="text/javascript">history.replaceState($(".back-grey1").html(), null, "");</script>
 		<!-- Basic Elements -->
 
 		<!-- Fourth -->

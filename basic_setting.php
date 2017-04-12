@@ -60,7 +60,8 @@ function change_custom_background_cb() {
 <?php
 }
 add_theme_support( 'custom-background', array('default-color' => '#443333', 'wp-head-callback'=>'change_custom_background_cb', ) );
-add_theme_support( 'custom-header', array('default-image' => get_template_directory_uri() . '/images/header.jpg',) );
+add_theme_support( 'custom-header', array(//'default-image' => get_template_directory_uri() . '/images/header.jpg',
+    'uploads' => true, 'width' => 1600, 'height' => 650,) );
 
 add_action( 'customize_preview_init', wp_enqueue_script( 
           'mytheme-themecustomizer',            //Give the script an ID
