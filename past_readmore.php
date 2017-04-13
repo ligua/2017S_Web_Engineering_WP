@@ -57,14 +57,14 @@ require_once('../../../wp-load.php');
                                 </h3>
                                 <?php  if ($eventlist_past[$i]["event_etime"][0]=="")
                                 {?>
-                                <a href=""><h2><?php  echo $sd->format("Y-m-d h:i") ?>  </h2></a>   
+                                <h2><?php  echo $sd->format("Y-m-d H:i") ?>  </h2> 
                                 <?php
                                 }
                                 else
                                 {
                                 ?> 
 
-                                <a href=""><h2><?php  echo $sd->format("Y-m-d h:i") ?> -  <?php  echo $ed->format("Y-m-d h:i") ?> </h2></a>
+                                <h2><?php  echo $sd->format("Y-m-d H:i") ?></br><?php  echo $ed->format("Y-m-d H:i") ?></h2>
                                 <?php }?>
                             </a>
                         </figure>
