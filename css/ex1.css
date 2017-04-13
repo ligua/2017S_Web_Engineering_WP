@@ -697,7 +697,8 @@ figure {
 	border-radius: 4px;
 	color:black;
 	font-size:1.5vw;
-	padding:3%
+	padding:3%;
+	font-family: Arial;
 }
 
 #h_book2 [type=submit]{
